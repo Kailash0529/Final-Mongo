@@ -4,7 +4,8 @@ package semi.minor.pro.constants;
 
 public enum UserType {
     STUDENT("student"),
-    INSTRUCTOR("instructor");
+    INSTRUCTOR("instructor"),
+    ADMIN("admin");
 
     private final String value;
 

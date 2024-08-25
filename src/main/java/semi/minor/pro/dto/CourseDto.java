@@ -1,33 +1,20 @@
-package semi.minor.pro.entity;
+package semi.minor.pro.dto;
+
+//import javax.persistence.Id;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-
-@Document
 @Data
-@Getter
-@Setter
-public class Course {
+public class CourseDto {
     @Id
     Integer courseId;
     String courseName;
     Integer courseFee;
     Integer instructorId;
     List<Integer>studentId;
-
-    public List<Integer> getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Integer studentId) {
-        this.studentId.add(studentId);
-    }
 
     public Integer getCourseId() {
         return courseId;
@@ -36,6 +23,8 @@ public class Course {
     public void setCourseId(Integer courseId) {
         this.courseId = courseId;
     }
+
+
 
     public Integer getInstructorId() {
         return instructorId;
@@ -59,5 +48,13 @@ public class Course {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+
+    public List<Integer> getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Integer studentId) {
+        this.studentId.add(studentId);
     }
 }
