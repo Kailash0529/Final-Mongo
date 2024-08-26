@@ -94,10 +94,8 @@ public class StudentServiceImpl implements StudentService {
             BeanUtils.copyProperties(studentDto, student);
 
             try {
-                // Initialize the course list for the student
                 List<Course> studentCourses = new ArrayList<>();
 
-                // Iterate over each courseId from studentDto
                 if (studentDto.getCourseId() != null && !studentDto.getCourseId().isEmpty()) {
                     for (Integer courseId : studentDto.getCourseId()) {
                         Optional<Course> courseOpt = courseRepository.findById(courseId);
@@ -109,10 +107,8 @@ public class StudentServiceImpl implements StudentService {
                     }
                 }
 
-                // Set the student's courses list
                 student.setCourseId(studentCourses);
 
-                // Save the student
                 studentRepository.save(student);
                 return true;
 

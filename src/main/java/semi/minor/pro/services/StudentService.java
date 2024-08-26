@@ -7,5 +7,4 @@ import semi.minor.pro.entity.Student;
 public interface StudentService {
     public Boolean add(StudentDto studentDto,String designation);
     public Boolean delete(Integer i);
-
 }
